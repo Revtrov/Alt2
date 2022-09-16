@@ -13,7 +13,7 @@ for (let i = 0; i < dataBase.radii.length; i++) {
 let averagePlanetRadius = totalOfRadii / dataBase.radii.length
 
 const scene = new THREE.Scene(),
-    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.0001, 70000),
+    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.0001, 700),
     renderer = new THREE.WebGLRenderer({
         canvas: document.getElementById("canvas"),
     }),
@@ -36,9 +36,9 @@ const ambientLight = { light: new THREE.AmbientLight(0xfffff3, brightness) },
 pointLight.position.set(0, 0, 0)
 scene.add(pointLight, ambientLight.light, /*lightHelper gridHelper*/ );
 
-let skyboxRadius = 900
+let skyboxRadius = 100
 const skyboxTexture = new THREE.TextureLoader().load('textures/skybox.jpg');
-const skybox = new THREE.SphereGeometry(skyboxRadius, 320, 160);
+const skybox = new THREE.SphereGeometry(skyboxRadius, 32, 16);
 const skyboxMaterial = new THREE.MeshStandardMaterial({ map: skyboxTexture, side: THREE.DoubleSide });
 const skyboxMesh = new THREE.Mesh(skybox, skyboxMaterial);
 scene.add(skyboxMesh)
@@ -55,7 +55,7 @@ EarthMesh.rotateZ((Math.PI / 180) * 16);
 EarthMesh.position.set(+((averagePlanetRadius + earthRadius) / 2) + spacing, 0, 0)
 
 const averagePlanetTexture = new THREE.TextureLoader().load('textures/averagePlanet.jpg');
-const averagePlanet = new THREE.SphereGeometry(averagePlanetRadius, 320, 160);
+const averagePlanet = new THREE.SphereGeometry(averagePlanetRadius, 32, 16);
 const averagePlanetMaterial = new THREE.MeshStandardMaterial({ map: averagePlanetTexture });
 const averagePlanetMesh = new THREE.Mesh(averagePlanet, averagePlanetMaterial);
 scene.add(averagePlanetMesh)
