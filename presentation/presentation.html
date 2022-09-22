@@ -11,13 +11,43 @@
 
 <body>
     <div id="topBar">
-        <button class="navBtns" id=" leftNav "><</button>
+        <a href="presentation.html" class="navBtns" id="leftNav"> &lt;</a>
         <h1 id="title">Page 1 - Hypothesis</h1>
-        <button class="navBtns" id="rightNav">></button>
+        <a href="presentationP2.html" class="navBtns" id="rightNav">></a>
     </div>
     <div id="mainContent">
-        <div class="window" id="leftWindow"></div>
-        <div class="window" id="rightWindow"></div>
+        <div id="windowTitle">We have discovered more Earth like planets than planets unlike Earth
+        </div>
+        <div class="window" id="leftWindow">
+            <div id="textBlock">
+                <h2>Description</h2>
+                <p>My project uses the data gathered from nasa funded telescopes. This data has been gathered into one location called the NASA Eexplanet Archive.<br> I will use this data to compare our own planet to those which we have found orbiting other
+                    stars
+                </p>
+            </div>
+            <div id="textBlock">
+                <h2>My Goals</h2>
+                <p>I plan to create a simulation of what the average planet found orbiting around other stars. I wish to compare this to our planet Earth to see how much they diffrentiate.<br> I would like to use each planets data to create count of similarities
+                    between our planet and others. If most of the planets I analyse do not share features with Earth this will disprove my theory and shows that most of the planets out there (that we can currently see) are not Earth like</p>
+
+            </div>
+            <div id="textBlock">
+                <h2>End Users</h2>
+                <p>I hope for end users such as astrophysicists to use my data to compare any planets they find to the average of what we have so far. This can be used as a scale for strangeness of planets discovery.</p>
+
+            </div>
+            <div id="textBlock">
+                <h2>Scources</h2>
+                <p>All of my planetary and stellar information came from a caltech archive at:
+                    <BR> https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS&constraint=default_flag=1&constraint=disc_facility+like+%27%25TESS%25%27
+                </p>
+            </div>
+
+
+        </div>
+        <div class="window" id="rightWindow">
+            <img src="images/nasaLogo.png" alt="nasaLogo" srcset="">
+        </div>
     </div>
     <script src="./presentation.js"></script>
 </body>

@@ -2,17 +2,12 @@ import * as THREE from './three.module.js';
 import { OrbitControls } from './OrbitControls.js';
 import { dataBase } from './readDataBase.js';
 
-let totalOfRadii = 0;
-for (let i = 0; i < dataBase.radii.length; i++) {
-    if (dataBase.radii[i] == "" && dataBase.radii[i] != undefined) {
-        continue
-    } else {
-        totalOfRadii += parseFloat(dataBase.radii[i])
-    }
-}
-let averagePlanetRadius = totalOfRadii / dataBase.radii.length
 
-document.getElementById("radius").innerHTML = averagePlanetRadius
+dataBase.radii.sort()
+
+let medianPlanetRadius = (parseFloat(dataBase.radii[Math.floor(dataBase.radii.length / 2) + 1]) + parseFloat(dataBase.radii[Math.floor(dataBase.radii.length / 2) - 1])) / 2
+document.getElementById("radius").innerHTML = medianPlanetRadius
+console.log(medianPlanetRadius)
 const scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.0001, 700),
     renderer = new THREE.WebGLRenderer({
@@ -53,14 +48,14 @@ const earthMaterial = new THREE.MeshStandardMaterial({ map: earthTexture });
 const EarthMesh = new THREE.Mesh(earth, earthMaterial);
 scene.add(EarthMesh)
 EarthMesh.rotateZ((Math.PI / 180) * 16);
-EarthMesh.position.set(+((averagePlanetRadius + earthRadius) / 2) + spacing, 0, 0)
+EarthMesh.position.set(+((medianPlanetRadius + earthRadius) / 2) + spacing, 0, 0)
 
 const averagePlanetTexture = new THREE.TextureLoader().load('textures/averagePlanet.jpg');
-const averagePlanet = new THREE.SphereGeometry(averagePlanetRadius, 32, 16);
+const averagePlanet = new THREE.SphereGeometry(medianPlanetRadius, 32, 16);
 const averagePlanetMaterial = new THREE.MeshStandardMaterial({ map: averagePlanetTexture });
 const averagePlanetMesh = new THREE.Mesh(averagePlanet, averagePlanetMaterial);
 scene.add(averagePlanetMesh)
-averagePlanetMesh.position.set(-((averagePlanetRadius + earthRadius) / 2) - spacing, 0, 0)
+averagePlanetMesh.position.set(-((medianPlanetRadius + earthRadius) / 2) - spacing, 0, 0)
 
 var customMaterial = new THREE.ShaderMaterial({
     uniforms: {

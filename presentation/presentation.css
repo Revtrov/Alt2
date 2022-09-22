@@ -11,17 +11,21 @@ body {
     top: 2%;
     width: 96%;
     height: 8vh;
-    display: grid;
-    grid-template-columns: 5% 90% 5%;
+    display: flex;
     justify-items: center;
     align-items: center;
 }
 
 .navBtns {
+    text-decoration: none;
+    user-select: none;
+    line-height: 8vh;
+    text-align: center;
+    font-size: 2vw;
     color: white;
     font-family: Monospace;
-    width: 100%;
-    height: 100%;
+    width: 8vh;
+    height: 8vh;
     background: radial-gradient( rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
     outline: none;
     border: none;
@@ -37,7 +41,8 @@ body {
     justify-content: center;
     text-align: center;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 16vh);
+    font-size: 2vw;
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -48,14 +53,67 @@ body {
     width: 96%;
     height: 85%;
     display: grid;
-    grid-template-columns: 49% 49%;
-    grid-column-gap: 2%;
+    grid-template-columns: 49%;
+    grid-template-rows: 8vh;
+    column-gap: 2%;
+    row-gap: 2%;
     justify-items: stretch;
     align-items: center;
+}
+
+#windowTitle {
+    line-height: 8vh;
+    text-align: center;
+    font-size: 1.5vw;
+    grid-column: 1 / 3;
+    height: 8vh;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .window {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.2);
+}
+
+#leftWindow {
+    width: calc(100% - 4vw);
+    max-width: calc(100% - 4vw);
+    max-height: calc(100% - 4vw);
+    height: calc(100% - 4vw);
+    padding: 2vw;
+    display: grid;
+    grid-template-columns: 100%;
+    font-size: 1vw;
+    overflow-y: scroll
+}
+
+#textBlock {
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+#textBlock>h2 {
+    width: 100%;
+}
+
+#textBlock>p {
+    width: 100%;
+}
+
+#rightWindow {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    text-align: center;
+    width: 80%;
+    height: auto;
+}
+
+iframe {
+    border-radius: 0.5vh
 }

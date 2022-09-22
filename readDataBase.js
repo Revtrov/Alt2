@@ -5,7 +5,6 @@ let dbstringr = dbstring.replace(/[\r\n]/gm, "")
 let everyValueArray = dbstringr.split(",")
     //split the string of all data into an array containing each data point
 let planets = []
-let dataBase = {}
     //create the array that will contain each planets data
 for (let i = 0; i < (everyValueArray.length / 91); i++) {
     planets.push([])
@@ -19,21 +18,40 @@ for (let i = 0; i <= everyValueArray.length; i++) {
 
     //see database_guide.txt for more info on data points relating to planets
 }
-let orbits = []
-for (let i = 0; i < planets.length; i++) {
-    orbits.push(planets[i][11])
-}
+let orbits = [],
+    radii = [],
+    parentStars = [],
+    mass = [],
+    eccentricity = [],
+    tempArray = []
 
-let radii = []
-for (let i = 0; i < planets.length; i++) {
-    if (planets[i][19] != undefined) {
-        radii.push(planets[i][19])
+let getValueAtIndex = (index, outArray) => {
+    for (let i = 0; i < planets.length; i++) {
+        if (planets[i][index] != undefined && planets[i][index] != "") {
+            outArray.push(planets[i][index])
+            tempArray.push(planets[i])
+        } else {}
+    }
+    planets = tempArray
+    tempArray = []
+}
+let featuresArray, featuresArrayIndex
+for (let i = 0; i < 2; i++) {
+    featuresArray = [orbits, radii, parentStars, mass, eccentricity]
+    featuresArrayIndex = [11, 19, 3, 28, 38]
+    for (let e = 0; e < featuresArray.length; e++) {
+        featuresArray[e] = []
+    }
+    for (let j = 0; j < featuresArray.length; j++) {
+        getValueAtIndex(featuresArrayIndex[j], featuresArray[j])
     }
 }
+let dataBase = {},
+    featuresArrayStrings = ["orbits", "radii", "parentStars", "mass", "eccentricity"]
+for (let j = 0; j < featuresArray.length; j++) {
+    dataBase[featuresArrayStrings[j]] = featuresArray[j]
+}
 
 
-dataBase.planets = planets;
-dataBase.orbits = orbits
-dataBase.radii = radii;
-
+console.log(dataBase)
 export { dataBase }
