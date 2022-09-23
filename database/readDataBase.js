@@ -1,4 +1,4 @@
-import dbstring from "/dbstring.js"
+import dbstring from "../database/dbstring.js"
 //grab string of all data from external file (abstraction) 
 let dbstringr = dbstring.replace(/[\r\n]/gm, "")
     //use regex to find all return characters and remove them from the string
@@ -28,7 +28,7 @@ let orbits = [],
 let getValueAtIndex = (index, outArray) => {
     for (let i = 0; i < planets.length; i++) {
         if (planets[i][index] != undefined && planets[i][index] != "") {
-            outArray.push(planets[i][index])
+            outArray.push(parseFloat(planets[i][index]))
             tempArray.push(planets[i])
         } else {}
     }
