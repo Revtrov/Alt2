@@ -54,7 +54,7 @@ body {
     height: 85%;
     display: grid;
     grid-template-columns: 49%;
-    grid-template-rows: 8vh;
+    grid-template-rows: 8% 92%;
     column-gap: 2%;
     row-gap: 2%;
     justify-items: stretch;
@@ -110,8 +110,8 @@ body {
 
 img {
     text-align: center;
-    width: 80%;
-    height: auto;
+    width: auto;
+    max-height: 80%;
 }
 
 iframe {

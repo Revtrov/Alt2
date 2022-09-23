@@ -23,6 +23,7 @@ let orbits = [],
     parentStars = [],
     mass = [],
     eccentricity = [],
+    equilibrium = [],
     tempArray = []
 
 let getValueAtIndex = (index, outArray) => {
@@ -37,8 +38,8 @@ let getValueAtIndex = (index, outArray) => {
 }
 let featuresArray, featuresArrayIndex
 for (let i = 0; i < 2; i++) {
-    featuresArray = [orbits, radii, parentStars, mass, eccentricity]
-    featuresArrayIndex = [11, 19, 3, 28, 38]
+    featuresArray = [orbits, radii, parentStars, mass, eccentricity, equilibrium]
+    featuresArrayIndex = [11, 19, 3, 28, 38, 46]
     for (let e = 0; e < featuresArray.length; e++) {
         featuresArray[e] = []
     }
@@ -47,7 +48,7 @@ for (let i = 0; i < 2; i++) {
     }
 }
 let dataBase = {},
-    featuresArrayStrings = ["orbits", "radii", "parentStars", "mass", "eccentricity"]
+    featuresArrayStrings = ["orbits", "radii", "parentStars", "mass", "eccentricity", "equilibrium"]
 for (let j = 0; j < featuresArray.length; j++) {
     dataBase[featuresArrayStrings[j]] = featuresArray[j]
 }
