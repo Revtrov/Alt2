@@ -2,8 +2,10 @@ import { dataBase } from "../database/readDataBase.js"
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 const ctx = document.getElementById('canvas').getContext('2d');
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, canvas.width, canvas.height)
 const myChart = new Chart(ctx, {
-    type: 'radar',
+    type: 'bar',
     data: {
         labels: dataBase.mass.sort().sort(function(a, b) {
             return a - b;

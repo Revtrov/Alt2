@@ -112,8 +112,18 @@ img {
     text-align: center;
     width: auto;
     max-height: 80%;
+    max-width: 80%;
 }
 
 iframe {
     border-radius: 0.5vh
+}
+
+.bigIframe {
+    width: 45vh;
+    height: 30vh
+}
+
+#reflect {
+    border: 10px white dashed;
 }
