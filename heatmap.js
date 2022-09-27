@@ -1,4 +1,4 @@
-import { dataBase } from "../database/readDataBase.js"
+import { dataBase } from "readDataBase.js"
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth;

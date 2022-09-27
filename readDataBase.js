@@ -1,4 +1,4 @@
-import dbstring from "../database/dbstring.js"
+import dbstring from "dbstring.js"
 //grab string of all data from external file (abstraction) 
 let dbstringr = dbstring.replace(/[\r\n]/gm, "")
     //use regex to find all return characters and remove them from the string
