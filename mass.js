@@ -1,4 +1,3 @@
-import { dataBase } from "readDataBase.js"
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 const ctx = document.getElementById('canvas').getContext('2d');
