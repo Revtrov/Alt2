@@ -34,7 +34,7 @@ pointLight.position.set(0, 0, 0)
 scene.add(pointLight, ambientLight.light, /*lightHelper gridHelper*/ );
 
 let skyboxRadius = 100
-const skyboxTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Revtrov/Alt2/master/skybox.jpg?token=GHSAT0AAAAAABYWXZ6PSQJSADQAFJNRSN6CYZS4SLQ');
+const skyboxTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Revtrov/Alt2/master/skybox.jpg');
 const skybox = new THREE.SphereGeometry(skyboxRadius, 12, 6);
 const skyboxMaterial = new THREE.MeshStandardMaterial({ map: skyboxTexture, side: THREE.DoubleSide });
 const skyboxMesh = new THREE.Mesh(skybox, skyboxMaterial);
@@ -43,7 +43,7 @@ skyboxMesh.position.set(0, 0, 0)
 
 let spacing = 1;
 let earthRadius = 1
-const earthTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Revtrov/Alt2/master/earth.jpg?token=GHSAT0AAAAAABYWXZ6O3D2W4MG23ZCY4DVKYZS4QJQ');
+const earthTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Revtrov/Alt2/master/earth.jpg');
 const earth = new THREE.SphereGeometry(earthRadius, 32, 16);
 const earthMaterial = new THREE.MeshStandardMaterial({ map: earthTexture });
 const EarthMesh = new THREE.Mesh(earth, earthMaterial);
@@ -51,7 +51,7 @@ scene.add(EarthMesh)
 EarthMesh.rotateZ((Math.PI / 180) * 16);
 EarthMesh.position.set(+((averagePlanetRadius + earthRadius) / 2) + spacing, 0, 0)
 
-const averagePlanetTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Revtrov/Alt2/master/averagePlanet.jpg?token=GHSAT0AAAAAABYWXZ6OOV2BMQTXM225UDI6YZS4Q6A');
+const averagePlanetTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Revtrov/Alt2/master/averagePlanet.jpg');
 const averagePlanet = new THREE.SphereGeometry(averagePlanetRadius, 32, 16);
 const averagePlanetMaterial = new THREE.MeshStandardMaterial({ map: averagePlanetTexture });
 const averagePlanetMesh = new THREE.Mesh(averagePlanet, averagePlanetMaterial);
